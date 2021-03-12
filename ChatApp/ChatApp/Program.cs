@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -15,6 +16,7 @@ namespace ChatApp
         static readonly List<Message> _messages = new();
         static User _user;
         static State _state = State.Disconnected;
+        static Guid _friendId = Guid.Empty;
 
         static void Main(string[] args)
         {
@@ -34,13 +36,20 @@ namespace ChatApp
             try
             {
                 Task.Factory.StartNew(CheckMessages);
-                Task.Factory.StartNew(SendEmptyString);
+                Task.Factory.StartNew(SendEmptyMessage);
 
                 while (true)
                 {
-                    var message = new Message(_user.Id, Console.ReadLine());
+                    var message = new Message(_user.Id, Console.ReadLine(), _friendId);
                     AddMessage(message);
-                    Send(message.ToString());
+                    if (_friendId == Guid.Empty)
+                    {
+                        Console.WriteLine("Message not sent, your friend is offline");
+                    }
+                    else
+                    {
+                        Send(message.ToString());
+                    }
                 }
             }
             catch (Exception ex)
@@ -67,16 +76,19 @@ namespace ChatApp
 
                     if (_state == State.Disconnected)
                     {
+                        var message = new Message(builder.ToString());
+                        _friendId = message.UserId;
                         _state = State.Connected;
                         SendMessages();
                         Console.WriteLine("Your friend in the chat");
                     }
 
                     var remoteFullIp = remoteIp as IPEndPoint;
-                    if (builder.ToString() != string.Empty && remoteFullIp?.Port == _user.RemotePort)
+                    var mes = new Message(builder.ToString());
+                    if (mes.Content.ToString() != string.Empty && remoteFullIp?.Port == _user.RemotePort)
                     {
-                        AddMessage(new(builder.ToString()));
-                        Console.WriteLine(builder.ToString());
+                        AddMessage(mes);
+                        Console.WriteLine(mes.GetMessage());
                     }
                 }
             }
@@ -99,18 +111,19 @@ namespace ChatApp
             }
         }
 
-        public static void SendEmptyString()
+        public static void SendEmptyMessage()
         {
             while (true)
             {
-                Send(string.Empty);
+                var mes = new Message(_user.Id, string.Empty);
+                Send(mes.ToString());
                 Thread.Sleep(100);
             }
         }
 
         public static void SendMessages()
         {
-            foreach (var item in _messages)
+            foreach (var item in _messages.Where(o => (o.UserId == _user.Id || o.UserId == _friendId) && (o.FriendId == _user.Id || o.FriendId == _friendId)))
             {
                 Send(item.ToString() + Environment.NewLine);
             }
