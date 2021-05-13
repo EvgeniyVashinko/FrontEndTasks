@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Create collection</title>
+        <link rel="stylesheet" href="css/iconsfont.css">
+        <link rel="stylesheet" href="css/dialog.css">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+
+<body>
+    <header>
+        <div>
+            <a id="logo">AnkiApp</a>
+        </div>
+
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="collections.html">Collections</a>
+            <a href="cards.html">Cards</a>
+            <a href="#">Sign out</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <dialog id="dialog">
+            <form>
+                <fieldset>
+                    <legend class="form__name">Create collection</legend>
+                    <input class="form__input" type="text" placeholder="Name">
+                    <button class="form__submit" type="submit">Create</button>
+                </fieldset>
+            </form>
+        </dialog>
+    </main>
+
+    <footer>
+        <div>
+            <span>Follow us</span>
+            <a href="#" class="icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="icon"><i class="fab fa-telegram"></i></a>
+            <a href="#" class="icon"><i class="fab fa-vk"></i></a>
+        </div>
+    </footer>
+    
+    <script type="text/javascript">
+        var element = document.getElementById('dialog');
+        element.showModal();
+    </script>
+</body>
+</html>
