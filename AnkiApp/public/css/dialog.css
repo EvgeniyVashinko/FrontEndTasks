@@ -1,0 +1,59 @@
+dialog {
+    border: none;
+    border-radius: 10px;
+    background-color: var(--secondary-background-color);
+}
+
+dialog::backdrop {
+    background: rgba(0,0,0,0.5);
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border: none;
+    padding: 20px 25px;
+}
+
+.form__name {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 900;
+    font-size: 30px;
+    color: var(--font-color);
+}
+
+.form__input {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    margin-top: 15px;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    width: 400px;
+    transition: 0.5s;
+    background: none;
+}
+
+.form__input-narrow {
+    width: 200px;
+}
+
+.form__input:focus {
+    outline: none;
+}
+
+.form__submit {
+    margin: 30px auto 0px auto;
+    padding: 10px 60px;
+    background-color: var(--secondary-background-color);
+    font-weight:bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    border-radius: 15px;
+    border-color: var(--border-color);
+    color: var(--font-color);
+}

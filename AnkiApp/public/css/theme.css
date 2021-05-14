@@ -1,0 +1,26 @@
+:root {
+    --primary-background-color: white;
+    --secondary-background-color: #F8F1F1;
+    --start-btn-color: #F8F1F1;
+    --edit-btn-color: #F8F1F1;
+    --del-btn-color: pink;
+    --font-color: black;
+    --border-color: black;
+    --focus-color: #fa4869;
+    --ref-color: #fa4869;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    :root {
+      --primary-background-color: #1a1919;
+      --secondary-background-color: #332f2f;
+      --start-btn-color: #F8F1F1;
+      --edit-btn-color: #F8F1F1;
+      --del-btn-color: pink;
+      --font-color: white;
+      --border-color: white;
+      --focus-color: #fa4869;
+      --ref-color: #fa4869;
+    }
+  }
