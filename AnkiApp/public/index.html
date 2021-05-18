@@ -6,110 +6,20 @@
     <title>Home</title>
     <link rel="stylesheet" href="css/iconsfont.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dialog.css">
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/8.6.1/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/8.6.1/firebase-auth.js"></script>
-    <script defer src="/__/firebase/8.6.1/firebase-database.js"></script>
-    <script defer src="/__/firebase/8.6.1/firebase-firestore.js"></script>
-    <script defer src="/__/firebase/8.6.1/firebase-functions.js"></script>
-    <script defer src="/__/firebase/8.6.1/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/8.6.1/firebase-storage.js"></script>
-    <script defer src="/__/firebase/8.6.1/firebase-analytics.js"></script>
-    <script defer src="/__/firebase/8.6.1/firebase-remote-config.js"></script>
-    <script defer src="/__/firebase/8.6.1/firebase-performance.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+    <script src="js/fbAuth.js"></script>
+
   </head>
   <body>
-    <header>
-        <div>
-            <a href="#" id="logo">AnkiApp</a>
-        </div>
-
-        <nav>
-            <a href="home.html">Home</a>
-            <a href="collections.html">Collections</a>
-            <a href="cards.html">Cards</a>
-            <a href="#">Sign out</a>
-        </nav>
+    <header id="header">
     </header> 
 
-    <main>
-        <h1 class="text-center">Welcome, User</h1>
-
-            <section class="statistics">
-                <article class="card collection-item stat">
-                    <p><strong>100</strong> cards played in a day</p>
-                </article>
-    
-                <article class="card collection-item stat">
-                    <p><strong>1434</strong> cards played in a day</p>
-                </article>
-    
-                <article class="card collection-item stat">
-                    <p><strong>1434</strong> cards played in a day</p>
-                </article>
-    
-                <article class="card collection-item stat">
-                    <p><strong>1434</strong> cards played in a day</p>
-                </article>
-            </section>
-
-        <section class="collection">
-            <h2 class="text-center">Recomendation</h2>
-
-            <ul class="collection-list">
-                <li>
-                    <article class="card collection-item">
-                        <h3>Name</h3>
-                        <button class="btn start">Start</button>
-                        <button class="btn edit">Edit</button>
-                        <button class="btn delete">Delete</button>
-                    </article>
-                </li>
-
-                <li>
-                    <article class="card collection-item">
-                        <h3>Name</h3>
-                        <button class="btn start">Start</button>
-                        <button class="btn edit">Edit</button>
-                        <button class="btn delete">Delete</button>
-                    </article>
-                </li>
-
-                <li>
-                    <article class="card collection-item">
-                        <h3>Name</h3>
-                        <button class="btn start">Start</button>
-                        <button class="btn edit">Edit</button>
-                        <button class="btn delete">Delete</button>
-                    </article>
-                </li>
-
-                <li>
-                    <article class="card collection-item">
-                        <h3>Name</h3>
-                        <button class="btn start">Start</button>
-                        <button class="btn edit">Edit</button>
-                        <button class="btn delete">Delete</button>
-                    </article>
-                </li>
-
-                <li>
-                    <article class="card collection-item">
-                        <h3>Name</h3>
-                        <button class="btn start">Start</button>
-                        <button class="btn edit">Edit</button>
-                        <button class="btn delete">Delete</button>
-                    </article>
-                </li>
-            </ul>
-        </section>
+    <main id="main">
     </main>
 
     <footer>
@@ -120,5 +30,6 @@
             <a href="#" class="icon"><i class="fab fa-vk"></i></a>
         </div>
     </footer>
+    <script type="module" src="js/app.js"></script>
 </body>
 </html>
