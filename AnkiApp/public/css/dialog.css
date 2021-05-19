@@ -28,7 +28,7 @@ fieldset {
 
 .form__input {
     border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    border-bottom: 1px solid var(--border-color);
     margin-top: 15px;
     font-size: 14px;
     text-transform: uppercase;
@@ -36,6 +36,7 @@ fieldset {
     width: 400px;
     transition: 0.5s;
     background: none;
+    color: var(--font-color);
 }
 
 .form__input-narrow {

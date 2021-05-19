@@ -107,18 +107,22 @@ h3 {
     padding: 10px;
     background-color: var(--secondary-background-color);
     border-color: var(--border-color);
+    color: var(--font-color);
 }
 
 .delete {
     background-color:var(--del-btn-color);
+    color: black;
 }
 
 .edit {
     background-color:var(--edit-btn-color);
+    color: black;
 }
 
 .start {
     background-color:var(--start-btn-color);
+    color: black;
 }
 
 .collection-item {
@@ -183,12 +187,14 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 100px;
 }
 
 .card__process {
     padding: 100px 150px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 p {
@@ -243,6 +249,37 @@ input:focus {
 }
 
 .card-form {
-    margin-left: 0;
+    margin: 100px;
 }
 
+.unreg-section, 
+.info-section {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+
+#get-started,
+#back {
+    padding: 30px 50px;
+}
+
+header .btn {
+    padding: revert;
+    margin: revert;
+}
+
+.text {
+    margin-left: 0px;
+}
+
+select {
+    padding: 5px;
+    border-radius: 15px;
+    margin-top: 10px;
+    min-width: 130px;
+}
+
+.btn-container{
+    margin-top: 10px;
+}
